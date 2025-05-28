@@ -42,6 +42,10 @@ from transformers import AutoTokenizer, PretrainedConfig, BertTokenizer
 from collections import OrderedDict
 
 
+global_log_filepath, global_model_dirpath, global_args_info, \
+global_model_config, global_model_version, global_model, global_tokenizer = None, None, None, None, None, None, None
+
+
 def load_model(
         log_filepath,
         model_dirpath,
@@ -75,7 +79,7 @@ def load_model(
             do_lower_case=args_info["do_lower_case"],
             truncation_side=args_info["truncation"]
         )
-    elif args_info["model_type"] in ["lucavirus"]:
+    elif args_info["model_type"] in ["lucavirus", "lucaone_virus"]:
         print("Alphabet, vocab path: %s" % tokenizer_dir)
         tokenizer = Alphabet.from_pretrained(tokenizer_dir)
     else:
@@ -85,7 +89,7 @@ def load_model(
             do_lower_case=args_info["do_lower_case"],
             truncation_side=args_info["truncation"])
     # four type of models
-    if args_info["model_type"] in ["lucavirus"]:
+    if args_info["model_type"] in ["lucavirus", "lucaone_virus"]:
         config_class, model_class = LucaGPLMConfig, LucaGPLM
     else:
         raise Exception("Not support model_type=%s" % args_info["model_type"])
@@ -103,17 +107,20 @@ def load_model(
     args.output_mode = args_info["output_mode"]
     args.max_length = args_info["max_length"]
     args.classifier_size = args_info["classifier_size"]
+    args.pretrained_model_name = None
     args.embedding_inference = embedding_inference
     try:
         model = model_class.from_pretrained(model_dirpath, args=args)
     except Exception as e:
         model = None
     if model is None:
+        """
         try:
             model = torch.load(
                 os.path.join(model_dirpath, "pytorch.pt"),
                 map_location=torch.device("cpu")
             )
+            model.embedding_inference = embedding_inference
         except Exception as e:
             model = model_class(model_config, args=args)
             pretrained_net_dict = torch.load(
@@ -134,6 +141,26 @@ def load_model(
                 if name in model_state_dict_keys:
                     new_state_dict[name] = v
             model.load_state_dict(new_state_dict)
+        """
+        model = model_class(model_config, args=args)
+        pretrained_net_dict = torch.load(
+            os.path.join(model_dirpath, "pytorch.pth"),
+            map_location=torch.device("cpu")
+        )
+        model_state_dict_keys = set()
+        for key in model.state_dict():
+            model_state_dict_keys.add(key)
+
+        new_state_dict = OrderedDict()
+        for k, v in pretrained_net_dict.items():
+            if k.startswith("module."):
+                # remove `module.`
+                name = k[7:]
+            else:
+                name = k
+            if name in model_state_dict_keys:
+                new_state_dict[name] = v
+        model.load_state_dict(new_state_dict)
     # print(model)
     return args_info, model_config, model, tokenizer
 
@@ -159,7 +186,7 @@ def encoder(
             truncation=True
         )
         processed_seq_len = sum(encoding["attention_mask"])
-    elif args_info["model_type"] in ["lucavirus"]:
+    elif args_info["model_type"] in ["lucavirus", "lucaone_virus"]:
         seqs = [seq]
         seq_types = [seq_type]
         seq_encoded_list = [tokenizer.encode(seq)]
@@ -270,7 +297,7 @@ def get_embedding(
         seq_type,
         device
 ):
-    if args_info["model_type"] in ["lucavirus"]:
+    if args_info["model_type"] in ["lucavirus", "lucaone_virus"]:
         if seq_type == "gene":
             seq = gene_seq_replace(seq)
             batch, processed_seq_len = encoder(args_info, model_config, seq, seq_type, tokenizer)
@@ -284,8 +311,8 @@ def get_embedding(
         new_batch["return_dict"] = True
         new_batch["repr_layers"] = list(range(args_info["num_hidden_layers"] + 1))
         batch = new_batch
-        print("batch:")
-        print(batch)
+        # print("Batch:")
+        # print(batch)
     else:
         if seq_type == "gene":
             seq = gene_seq_replace(seq)
@@ -303,7 +330,7 @@ def get_embedding(
             "output_hidden_states": True,
             "return_dict": True
         }
-    print("llm embedding device: ", device)
+    print("LLM embedding device: ", device)
     model.to(device)
     model.eval()
     try:
@@ -311,7 +338,7 @@ def get_embedding(
             output = model(**batch)
             return output, processed_seq_len
     except Exception as e:
-        print("get embedding:", e)
+        print("Get embedding:", e)
         return None, None
 
 
@@ -834,16 +861,16 @@ def main(model_args):
     )
 
     cur_log_filepath = "%s/logs/lucavirus/%s/%s/%s/%s/logs.txt" % (
-        model_args.llm_dir if model_args.llm_dir else "..",
+        model_args.llm_dir if model_args.llm_dir else "../..",
         model_args.llm_version,
         model_args.llm_task_level,
         model_args.llm_type,
         model_args.llm_time_str
     )
-    print("log_filepath: %s" % os.path.abspath(cur_log_filepath))
+    print("Log filepath: %s" % os.path.abspath(cur_log_filepath))
 
-    cur_model_dirpath = "%s/models/lucavirus/%s/%s/%s/%s/checkpoint-%d" % (
-        model_args.llm_dir if model_args.llm_dir else "..",
+    cur_model_dirpath = "%s/models/lucavirus/%s/%s/%s/%s/checkpoint-%s" % (
+        model_args.llm_dir if model_args.llm_dir else "../..",
         model_args.llm_version,
         model_args.llm_task_level,
         model_args.llm_type,
@@ -851,15 +878,19 @@ def main(model_args):
         model_args.llm_step
     )
     if not os.path.exists(cur_model_dirpath):
-        cur_model_dirpath = "%s/models/lucavirus/%s/%s/%s/%s/checkpoint-step%d" % (
-            model_args.llm_dir if model_args.llm_dir else "..", model_args.llm_version, model_args.llm_task_level,
-            model_args.llm_type, model_args.llm_time_str, model_args.llm_step
+        cur_model_dirpath = "%s/models/lucavirus/%s/%s/%s/%s/checkpoint-step%s" % (
+            model_args.llm_dir if model_args.llm_dir else "../..",
+            model_args.llm_version,
+            model_args.llm_task_level,
+            model_args.llm_type,
+            model_args.llm_time_str,
+            model_args.llm_step
         )
-    print("model_dirpath: %s" % os.path.abspath(cur_model_dirpath))
+    print("Model dirpath: %s" % os.path.abspath(cur_model_dirpath))
 
     if not os.path.exists(cur_model_dirpath):
-        cur_model_dirpath = "%s/models/lucavirus/%s/%s/%s/%s/checkpoint-step%d" % (
-            model_args.llm_dir if model_args.llm_dir else "..",
+        cur_model_dirpath = "%s/models/lucavirus/%s/%s/%s/%s/checkpoint-step%s" % (
+            model_args.llm_dir if model_args.llm_dir else "../..",
             model_args.llm_version,
             model_args.llm_task_level,
             model_args.llm_type,
@@ -867,7 +898,7 @@ def main(model_args):
             model_args.llm_step
         )
         cur_log_filepath = "%s/logs/lucavirus/%s/%s/%s/%s/logs.txt" % (
-            model_args.llm_dir if model_args.llm_dir else "..",
+            model_args.llm_dir if model_args.llm_dir else "../..",
             model_args.llm_version,
             model_args.llm_task_level,
             model_args.llm_type,

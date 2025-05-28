@@ -39,7 +39,7 @@
 # for DNA or RNA      
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
-    --llm_dir ../../..  \
+    --llm_dir ..  \
     --llm_type lucavirus \
     --llm_version v1.0 \
     --llm_task_level token_level,span_level,seq_level \
@@ -48,12 +48,12 @@ python get_embedding.py \
     --truncation_seq_length 10240 \
     --trunc_type right \
     --seq_type gene \
-    --input_file ../../../data/test_data/gene/test_gene.fasta \
-    --save_path ../../../embedding/lucavirus/test_data/gene/test_gene \
+    --input_file ../data/test_data/gene/test_gene.fasta \
+    --save_path ../embedding/lucavirus/test_data/gene/test_gene \
     --embedding_type matrix \
     --matrix_add_special_token \
     --embedding_complete \
-    --embedding_complete_seg_overlap 
+    --embedding_complete_seg_overlap \
     --embedding_fixed_len_a_time 4096 \
     --gpu_id 0
 ```   
@@ -63,7 +63,7 @@ python get_embedding.py \
 # for protein     
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
-    --llm_dir ../../..  \
+    --llm_dir ..  \
     --llm_type lucavirus \
     --llm_version v1.0 \
     --llm_task_level token_level,span_level,seq_level \
@@ -72,8 +72,8 @@ python get_embedding.py \
     --truncation_seq_length 4096 \
     --trunc_type right \
     --seq_type prot \
-    --input_file ../../../data/test_data/prot/test_prot.fasta \
-    --save_path ../../../embedding/lucavirus/test_data/prot/test_prot \
+    --input_file ../data/test_data/prot/test_prot.fasta \
+    --save_path ../embedding/lucavirus/test_data/prot/test_prot \
     --embedding_type matrix \
     --matrix_add_special_token \
     --embedding_complete \
@@ -88,21 +88,21 @@ python get_embedding.py \
 # for DNA or RNA      
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
-    --llm_dir ../../..  \
+    --llm_dir ..  \
     --llm_type lucavirus-mask \
     --llm_version v1.0 \
-    --llm_task_level token_level,span_level,seq_level \
+    --llm_task_level token_level \
     --llm_time_str 20250113063529 \
     --llm_step 1400000 \
     --truncation_seq_length 10240 \
     --trunc_type right \
     --seq_type gene \
-    --input_file ../../../data/test_data/gene/test_gene.fasta \
-    --save_path ../../../embedding/lucavirus/test_data/gene/test_gene \
+    --input_file ../data/test_data/gene/test_gene.fasta \
+    --save_path ../embedding/lucavirus/test_data/gene/test_gene \
     --embedding_type matrix \
     --matrix_add_special_token \
     --embedding_complete \
-    --embedding_complete_seg_overlap 
+    --embedding_complete_seg_overlap \
     --embedding_fixed_len_a_time 4096 \
     --gpu_id 0
 ```   
@@ -112,17 +112,17 @@ python get_embedding.py \
 # for protein     
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
-    --llm_dir ../../..  \
+    --llm_dir ..  \
     --llm_type lucavirus-mask \
     --llm_version v1.0 \
-    --llm_task_level token_level,span_level,seq_level \
+    --llm_task_level token_level \
     --llm_time_str 20250113063529 \
     --llm_step 1400000 \
     --truncation_seq_length 4096 \
     --trunc_type right \
     --seq_type prot \
-    --input_file ../../../data/test_data/prot/test_prot.fasta \
-    --save_path ../../../embedding/lucavirus/test_data/prot/test_prot \
+    --input_file ../data/test_data/prot/test_prot.fasta \
+    --save_path ../embedding/lucavirus/test_data/prot/test_prot \
     --embedding_type matrix \
     --matrix_add_special_token \
     --embedding_complete \
@@ -138,7 +138,7 @@ python get_embedding.py \
 # only for DNA or RNA      
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
-    --llm_dir ../../..  \
+    --llm_dir ..  \
     --llm_type lucavirus-gene \
     --llm_version v1.0 \
     --llm_task_level token_level,span_level,seq_level \
@@ -147,12 +147,12 @@ python get_embedding.py \
     --truncation_seq_length 10240 \
     --trunc_type right \
     --seq_type gene \
-    --input_file ../../../data/test_data/gene/test_gene.fasta \
-    --save_path ../../../embedding/lucavirus/test_data/gene/test_gene \
+    --input_file ../data/test_data/gene/test_gene.fasta \
+    --save_path ../embedding/lucavirus/test_data/gene/test_gene \
     --embedding_type matrix \
     --matrix_add_special_token \
     --embedding_complete \
-    --embedding_complete_seg_overlap 
+    --embedding_complete_seg_overlap \
     --embedding_fixed_len_a_time 4096 \
     --gpu_id 0
 ```   
@@ -163,8 +163,8 @@ python get_embedding.py \
 # for protein     
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
-    --llm_dir ../../..  \
-    --llm_type lucavirus \
+    --llm_dir ..  \
+    --llm_type lucavirus-prot \
     --llm_version v1.0 \
     --llm_task_level token_level,span_level,seq_level \
     --llm_time_str 20250504090749 \
@@ -172,8 +172,8 @@ python get_embedding.py \
     --truncation_seq_length 4096 \
     --trunc_type right \
     --seq_type prot \
-    --input_file ../../../data/test_data/prot/test_prot.fasta \
-    --save_path ../../../embedding/lucavirus/test_data/prot/test_prot \
+    --input_file ../data/test_data/prot/test_prot.fasta \
+    --save_path ../embedding/lucavirus/test_data/prot/test_prot \
     --embedding_type matrix \
     --matrix_add_special_token \
     --embedding_complete \
