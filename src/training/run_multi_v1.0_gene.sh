@@ -79,15 +79,15 @@ cd ..
 python -W ignore -m torch.distributed.launch --nnodes 1 --node_rank 0 --master_port 29998 --nproc_per_node=$nproc_per_node \
        run.py \
        --time_str $time_str \
-       --tb_log_dir ../tb-logs/$DATASET_NAME/$DATASET_TYPE/$TASK_TYPE/$MODEL_TYPE/$time_str \
-       --log_dir ../logs/$DATASET_NAME/$DATASET_TYPE/$TASK_TYPE/$MODEL_TYPE/$time_str \
-       --output_dir ../models/$DATASET_NAME/$DATASET_TYPE/$TASK_TYPE/$MODEL_TYPE/$time_str \
+       --tb_log_dir ../tb-logs/$MODEL_TYPE/$DATASET_TYPE/$TASK_TYPE/$DATASET_NAME/$time_str \
+       --log_dir ../logs/$MODEL_TYPE/$DATASET_TYPE/$TASK_TYPE/$DATASET_NAME/$time_str \
+       --output_dir ../models/$MODEL_TYPE/$DATASET_TYPE/$TASK_TYPE/$DATASET_NAME/$time_str \
        --num_attention_heads $NUM_ATTENTION_HEADS \
        --num_hidden_layers $NUM_ATTENTION_LAYERS \
        --hidden_size $HIDDEN_SIZE \
        --max_length $MAX_LENGTH  \
-       --vocab_path ../vocab/lucavirus/$DATASET_TYPE/vocab.txt \
-       --tokenizer_dir ../vocab/lucavirus/$DATASET_TYPE/vocab.txt \
+       --vocab_path ../vocab/$MODEL_TYPE/$DATASET_TYPE/vocab.txt \
+       --tokenizer_dir ../vocab/$MODEL_TYPE/$DATASET_TYPE/vocab.txt \
        --add_special_tokens \
        --padding $PADDING_TYPE \
        --truncation $TRUNCATION_TYPE \
@@ -97,15 +97,15 @@ python -W ignore -m torch.distributed.launch --nnodes 1 --node_rank 0 --master_p
        --train_data_dir ../dataset/$DATASET_NAME/$DATASET_TYPE/train/ \
        --dev_data_dir ../dataset/$DATASET_NAME/$DATASET_TYPE/dev/ \
        --test_data_dir ../dataset/$DATASET_NAME/$DATASET_TYPE/test/ \
-       --gene_mask_label_filepath ../vocab/lucavirus/$DATASET_TYPE/vocab.txt \
-       --prot_mask_label_filepath ../vocab/lucavirus/$DATASET_TYPE/vocab.txt \
-       --gene_type_label_filepath ../label/lucavirus/$DATASET_TYPE/lucavirus_gene_type_span_level_label.txt \
-       --prot_homo_label_filepath ../label/lucavirus/$DATASET_TYPE/lucavirus_prot_homo_span_level_label.txt \
-       --prot_site_label_filepath ../label/lucavirus/$DATASET_TYPE/lucavirus_prot_site_span_level_label.txt \
-       --prot_domain_label_filepath ../label/lucavirus/$DATASET_TYPE/lucavirus_prot_domain_span_level_label.txt \
-       --gene_taxonomy_label_filepath ../label/lucavirus/$DATASET_TYPE/lucavirus_gene_taxonomy_seq_level_label.txt \
-       --prot_taxonomy_label_filepath ../label/lucavirus/$DATASET_TYPE/lucavirus_prot_taxonomy_seq_level_label.txt \
-       --prot_keyword_label_filepath ../label/lucavirus/$DATASET_TYPE/lucavirus_prot_keyword_seq_level_label.txt \
+       --gene_mask_label_filepath ../vocab/$MODEL_TYPE/$DATASET_TYPE/vocab.txt \
+       --prot_mask_label_filepath ../vocab/$MODEL_TYPE/$DATASET_TYPE/vocab.txt \
+       --gene_type_label_filepath ../label/$MODEL_TYPE/$DATASET_TYPE/lucavirus_gene_type_span_level_label.txt \
+       --prot_homo_label_filepath ../label/$MODEL_TYPE/$DATASET_TYPE/lucavirus_prot_homo_span_level_label.txt \
+       --prot_site_label_filepath ../label/$MODEL_TYPE/$DATASET_TYPE/lucavirus_prot_site_span_level_label.txt \
+       --prot_domain_label_filepath ../label/$MODEL_TYPE/$DATASET_TYPE/lucavirus_prot_domain_span_level_label.txt \
+       --gene_taxonomy_label_filepath ../label/$MODEL_TYPE/$DATASET_TYPE/lucavirus_gene_taxonomy_seq_level_label.txt \
+       --prot_taxonomy_label_filepath ../label/$MODEL_TYPE/$DATASET_TYPE/lucavirus_prot_taxonomy_seq_level_label.txt \
+       --prot_keyword_label_filepath ../label/$MODEL_TYPE/$DATASET_TYPE/lucavirus_prot_keyword_seq_level_label.txt \
        --gene_mask_output_mode multi_class \
        --prot_mask_output_mode multi_class \
        --gene_type_output_mode multi_class \

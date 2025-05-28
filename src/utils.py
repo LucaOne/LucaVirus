@@ -1983,16 +1983,16 @@ def download_trained_checkpoint_lucavirus(
     try:
         logs_file_names = ["logs.txt"]
         models_file_names = ["config.json", "pytorch.pth", "training_args.bin", "tokenizer/alphabet.pkl"]
-        logs_path = "logs/%s/%s/%s/lucavirus/%s" % (
-            llm_type,
+        logs_path = "logs/lucavirus/%s/%s/%s/%s" % (
             llm_version,
             llm_task_level,
+            llm_type,
             llm_time_str
         )
-        models_path = "models/%s/%s/%s/lucavirus/%s/checkpoint-step%s" % (
-            llm_type,
+        models_path = "models/lucavirus/%s/%s/%s/%s/checkpoint-step%s" % (
             llm_version,
             llm_task_level,
+            llm_type,
             llm_time_str,
             llm_step
         )

@@ -1047,7 +1047,7 @@ def get_model(args):
     """
 
     # four type of models
-    if args.model_type in ["lucavirus"]:
+    if args.model_type in ["lucavirus", "lucaone_virus"]:
         config_class, model_class = LucaGPLMConfig, LucaGPLM
     else:
         raise Exception("Not support model_type=%s" % args.model_type)
@@ -1067,7 +1067,7 @@ def get_model(args):
                 do_lower_case=args.do_lower_case,
                 truncation_side=args.truncation
             )
-        elif args.model_type in ["lucavirus"]:
+        elif args.model_type in ["lucavirus", "lucaone_virus"]:
             print("Alphabet, vocab path: %s" % tokenizer_dir)
             tokenizer = Alphabet.from_pretrained(tokenizer_dir)
         else:
@@ -1085,7 +1085,7 @@ def get_model(args):
                 do_lower_case=args.do_lower_case,
                 truncation_side=args.truncation
             )
-        elif args.model_type in ["lucavirus"]:
+        elif args.model_type in ["lucavirus", "lucaone_virus"]:
             print("Alphabet, tokenizer_dir: %s" % args.tokenizer_dir)
             tokenizer = Alphabet.from_predefined(model_config.alphabet)
         else:
@@ -1535,18 +1535,19 @@ def main():
     )
     # 基因-蛋白pair对数据集
     if "all" in args.pretrain_task_level_type or "pair_level" in args.pretrain_task_level_type:
-        if args.model_type in ["lucavirus"]:
+        if args.model_type in ["lucavirus", "lucaone_virus"]:
             parse_row_func = encoder.encode_char_pair
         else:
             parse_row_func = encoder.encode_pair
-    else: # 基因或者蛋白单记录数据集
-        if args.model_type in ["lucavirus"]:
+    else:
+        # 基因或者蛋白单记录数据集
+        if args.model_type in ["lucavirus", "lucaone_virus"]:
             parse_row_func = encoder.encode_char_single
         else:
             parse_row_func = encoder.encode_single
 
     # encoding
-    if args.model_type in ["lucavirus"]:
+    if args.model_type in ["lucavirus", "lucaone_virus"]:
         # lucagplm独特的batch转换器
         batch_data_func = BatchConverter(
             tokenizer,
