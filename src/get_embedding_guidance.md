@@ -1,6 +1,6 @@
 # LLM for embedding
 
-## LucaVirus Embedding
+## LucaVirus Embedding    
 
 **建议与说明:**         
 1）尽量使用显存大进行embedding 推理，如：A100，H100，H200等，这样一次性能够处理较长的序列，LucaVirus在A100下可以一次性处理`2800`左右长度的序列；   
@@ -32,12 +32,11 @@
 8) For RNA, most RNA is not very long, so the processing method can be consistent with the protein, so the `--embedding_fixed_len_a_time` can be set a larger value or not be set.
 
 
-## Using LucaVirus
-### for `gene(DNA or RNA)`
+## Using LucaVirus       
+### for `gene(DNA or RNA)`          
 
 ```
-# for DNA or RNA     
-cd ./src/embedding     
+# for DNA or RNA      
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
     --llm_dir ../../..  \
@@ -62,7 +61,6 @@ python get_embedding.py \
 ### for `prot`
 ```  
 # for protein     
-cd ./src/embedding     
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
     --llm_dir ../../..  \
@@ -87,8 +85,7 @@ python get_embedding.py \
 ### for `gene(DNA or RNA)`
 
 ```
-# for DNA or RNA    
-cd ./src/embedding      
+# for DNA or RNA      
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
     --llm_dir ../../..  \
@@ -112,8 +109,7 @@ python get_embedding.py \
 
 ### for `prot`
 ```  
-# for protein    
-cd ./src/embedding    
+# for protein     
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
     --llm_dir ../../..  \
@@ -135,12 +131,11 @@ python get_embedding.py \
 ```
 
 
-## Using LucaVirus-Gene
-**Notice:** only for DNA or RNA
+## Using LucaVirus-Gene  
+**Notice:** only for DNA or RNA   
 
 ```
-# only for DNA or RNA    
-cd ./src/embedding    
+# only for DNA or RNA      
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
     --llm_dir ../../..  \
@@ -162,11 +157,10 @@ python get_embedding.py \
     --gpu_id 0
 ```   
 
-## Using LucaVirus-Prot
-**Notice:** only for Protein
+## Using LucaVirus-Prot   
+**Notice:** only for Protein      
 ```  
-# for protein    
-cd ./src/embedding    
+# for protein     
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7,8"
 python get_embedding.py \
     --llm_dir ../../..  \
