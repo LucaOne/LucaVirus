@@ -1,0 +1,603 @@
+2Fe-2S
+3D-structure
+3Fe-4S
+4Fe-4S
+ADP-ribosylation
+AIDS
+ANK repeat
+ATP synthesis
+ATP-binding
+Acetylation
+Actin-binding
+Actin-dependent inwards viral transport
+Activation of host NF-kappa-B by virus
+Activation of host autophagy by virus
+Activation of host caspases by virus
+Activator
+Acyltransferase
+Adaptive immunity
+Allosteric enzyme
+Alternative initiation
+Alternative promoter usage
+Alternative splicing
+Amino-acid biosynthesis
+Amino-acid transport
+Aminoacyl-tRNA synthetase
+Aminopeptidase
+Aminotransferase
+Ammonia transport
+Amyloid
+Antibiotic
+Antibiotic biosynthesis
+Antibiotic resistance
+Antimicrobial
+Antioxidant
+Antiviral defense
+Apoptosis
+Arginine biosynthesis
+Aromatic amino acid biosynthesis
+Aromatic hydrocarbons catabolism
+Arsenical resistance
+Asparagine biosynthesis
+Aspartyl esterase
+Aspartyl protease
+Autocatalytic cleavage
+Autoinducer synthesis
+Autophagy
+Bacterial flagellum
+Bacterial host gene expression shutoff by virus
+Bacterial host transcription shutoff by virus
+Bacteriocin
+Bacteriocin transport
+Bacteriolytic enzyme
+Biotin biosynthesis
+Branched-chain amino acid biosynthesis
+CBS domain
+CF(0)
+CRISPR-cas system evasion by virus
+Calcium
+Calcium transport
+Cap snatching
+Capsid decoration protein
+Capsid inner membrane protein
+Capsid protein
+Carbohydrate metabolism
+Carbon dioxide fixation
+Carboxypeptidase
+Carotenoid biosynthesis
+Caveolin-mediated endocytosis of virus by host
+Cell adhesion
+Cell cycle
+Cell division
+Cell inner membrane
+Cell junction
+Cell membrane
+Cell outer membrane
+Cell projection
+Cell shape
+Cell wall
+Cell wall biogenesis/degradation
+Cellulose biosynthesis
+Cellulose degradation
+Chaperone
+Chemotaxis
+Chitin degradation
+Chitin-binding
+Chloride
+Chlorophyll
+Cholesterol biosynthesis
+Cholesterol metabolism
+Chromatin regulator
+Chromophore
+Chromosome
+Chromosome partition
+Cilium
+Clathrin- and caveolin-independent endocytosis of virus by host
+Clathrin-mediated endocytosis of virus by host
+Cleavage on pair of basic residues
+Cobalamin
+Cobalt
+Coenzyme A biosynthesis
+Coiled coil
+Collagen
+Copper
+Covalent protein-DNA linkage
+Covalent protein-RNA linkage
+Cyclin
+Cysteine biosynthesis
+Cytokine
+Cytokinin signaling pathway
+Cytolysis
+Cytoplasm
+Cytoplasmic inwards viral transport
+Cytoplasmic vesicle
+Cytoskeleton
+DNA condensation
+DNA damage
+DNA end degradation evasion by virus
+DNA excision
+DNA integration
+DNA invertase
+DNA recombination
+DNA repair
+DNA replication
+DNA synthesis
+DNA-binding
+DNA-directed DNA polymerase
+DNA-directed RNA polymerase
+Decarboxylase
+Decay of host mRNAs by virus
+Degradation of host capsule during virus entry
+Degradation of host cell envelope components during virus entry
+Degradation of host chromosome by virus
+Degradation of host lipopolysaccharides during virus entry
+Degradation of host peptidoglycans during virus entry
+Deoxyribonucleotide synthesis
+Diaminopimelate biosynthesis
+Differentiation
+Dioxygenase
+Dipeptidase
+Direct protein sequencing
+Disulfide bond
+EGF-like domain
+Early protein
+Electron transport
+Elongation factor
+Endonuclease
+Endoplasmic reticulum
+Endosome
+Enterotoxin
+Eukaryotic host gene expression shutoff by virus
+Eukaryotic host transcription shutoff by virus
+Eukaryotic host translation shutoff by virus
+Evasion of bacteria-mediated translation shutoff by virus
+Evasion of host immunity by viral interleukin-like protein
+Excision nuclease
+Exonuclease
+FAD
+FMN
+Fatty acid biosynthesis
+Fatty acid metabolism
+Flagellum
+Flavoprotein
+Folate biosynthesis
+Formylation
+Fusion of virus membrane with host cell membrane
+Fusion of virus membrane with host endosomal membrane
+Fusion of virus membrane with host membrane
+Fusion of virus membrane with host outer membrane
+G-protein coupled receptor
+G0/G1 host cell cycle checkpoint dysregulation by virus
+G1/S host cell cycle checkpoint dysregulation by virus
+GMP biosynthesis
+GPI-anchor
+GTP-binding
+Gap junction
+Genetically modified food
+Gibberellin signaling pathway
+Gluconate utilization
+Gluconeogenesis
+Glucose metabolism
+Glutamate biosynthesis
+Glutamine amidotransferase
+Glycolysis
+Glycoprotein
+Glycosidase
+Glycosyltransferase
+Glyoxylate bypass
+Growth arrest
+Growth factor
+Guanine-nucleotide releasing factor
+Helical capsid protein
+Helicase
+Hemagglutinin
+Heme
+Heme biosynthesis
+Herbicide resistance
+Histidine biosynthesis
+Histidine metabolism
+Homeobox
+Hormone
+Host G2/M cell cycle arrest by virus
+Host Golgi apparatus
+Host cell inner membrane
+Host cell junction
+Host cell lysis by virus
+Host cell membrane
+Host cell outer membrane
+Host cell projection
+Host cytoplasm
+Host cytoplasmic vesicle
+Host cytoskeleton
+Host endoplasmic reticulum
+Host endosome
+Host gene expression shutoff by virus
+Host lipid droplet
+Host lysosome
+Host mRNA suppression by virus
+Host membrane
+Host microsome
+Host mitochondrion
+Host mitochondrion inner membrane
+Host mitochondrion outer membrane
+Host nucleus
+Host periplasm
+Host thylakoid
+Host-virus interaction
+Hydrogen ion transport
+Hydrogen peroxide
+Hydrolase
+Hydroxylation
+Hypersensitive response elicitation
+Hypusine
+Immunity
+Immunoglobulin domain
+Inhibition of eukaryotic host transcription initiation by virus
+Inhibition of eukaryotic host translation factors by virus
+Inhibition of host DNA replication by virus
+Inhibition of host IKBKE by virus
+Inhibition of host IRF3 by virus
+Inhibition of host IRF7 by virus
+Inhibition of host IRF9 by virus
+Inhibition of host ISG15 by virus
+Inhibition of host JAK1 by virus
+Inhibition of host MAVS by virus
+Inhibition of host MDA5 by virus
+Inhibition of host MHC class I molecule presentation by virus
+Inhibition of host MHC class II molecule presentation by virus
+Inhibition of host NF-kappa-B by virus
+Inhibition of host PKR by virus
+Inhibition of host RIG-I by virus
+Inhibition of host RLR pathway by virus
+Inhibition of host RNA polymerase II by virus
+Inhibition of host STAT1 by virus
+Inhibition of host STAT2 by virus
+Inhibition of host TAP by virus
+Inhibition of host TBK1 by virus
+Inhibition of host TLR pathway by virus
+Inhibition of host TRAFs by virus
+Inhibition of host TYK2 by virus
+Inhibition of host adaptive immune response by virus
+Inhibition of host apoptosis by viral BCL2-like protein
+Inhibition of host apoptosis by viral FLIP-like protein
+Inhibition of host autophagy by virus
+Inhibition of host caspases by virus
+Inhibition of host chemokines by virus
+Inhibition of host complement factors by virus
+Inhibition of host innate immune response by virus
+Inhibition of host interferon receptors by virus
+Inhibition of host interferon signaling pathway by virus
+Inhibition of host mRNA nuclear export by virus
+Inhibition of host mitotic exit by virus
+Inhibition of host pre-mRNA processing by virus
+Inhibition of host proteasome antigen processing by virus
+Inhibition of host tapasin by virus
+Inhibition of host tetherin by virus
+Initiation factor
+Innate immunity
+Inner capsid protein
+Integrin
+Interferon antiviral system evasion
+Intermediate capsid protein
+Intron homing
+Ion channel
+Ion transport
+Iron
+Iron storage
+Iron-sulfur
+Isoleucine biosynthesis
+Isomerase
+Isopeptide bond
+Isoprene biosynthesis
+Kelch repeat
+Keratin
+Kinase
+Knottin
+Kringle
+Lactose metabolism
+Late protein
+Latency-replication decision
+Lectin
+Leucine biosynthesis
+Leucine-rich repeat
+Ligase
+Lipid A biosynthesis
+Lipid biosynthesis
+Lipid degradation
+Lipid metabolism
+Lipid-binding
+Lipoprotein
+Lipoyl
+Lyase
+Lysine biosynthesis
+MHC I
+Magnesium
+Manganese
+Mannose-binding
+Meiosis
+Membrane
+Menaquinone biosynthesis
+Merozoite
+Metal-binding
+Metal-thiolate cluster
+Metalloprotease
+Methionine biosynthesis
+Methotrexate resistance
+Methylation
+Methyltransferase
+Microtubular inwards viral transport
+Microtubular outwards viral transport
+Microtubule
+Mitochondrion
+Mitochondrion inner membrane
+Mitogen
+Mitosis
+Modulation of host E3 ubiquitin ligases by virus
+Modulation of host NK-cell activity by virus
+Modulation of host PP1 activity by virus
+Modulation of host cell apoptosis by virus
+Modulation of host cell cycle by viral cyclin-like protein
+Modulation of host cell cycle by virus
+Modulation of host chromatin by virus
+Modulation of host dendritic cell activity by virus
+Modulation of host immunity by viral IgG Fc receptor-like protein
+Modulation of host ubiquitin pathway by viral E3 ligase
+Modulation of host ubiquitin pathway by viral deubiquitinase
+Modulation of host ubiquitin pathway by viral ubl
+Modulation of host ubiquitin pathway by virus
+Modulation of host virulence by virus
+Molybdenum
+Monooxygenase
+Motor protein
+Multifunctional enzyme
+Muscle protein
+Mutator protein
+Myristate
+NAD
+NADP
+Neuropeptide
+Neurotoxin
+Nickel
+Nickel insertion
+Nuclease
+Nucleosome core
+Nucleotide biosynthesis
+Nucleotide metabolism
+Nucleotide-binding
+Nucleotidyltransferase
+Nucleus
+Oncogene
+One-carbon metabolism
+Organic radical
+Outer capsid protein
+Oxidation
+Oxidoreductase
+Palmitate
+Pantothenate biosynthesis
+Peptidoglycan synthesis
+Periplasm
+Peroxidase
+Pharmaceutical
+Phosphate transport
+Phospholipid biosynthesis
+Phospholipid metabolism
+Phosphopantetheine
+Phosphoprotein
+Phosphotransferase system
+Photoreceptor protein
+Photosynthesis
+Photosystem I
+Photosystem II
+Plasmid
+Plasmid partition
+Plasminogen activation
+Plastid
+Plastoquinone
+Polyamine biosynthesis
+Polysaccharide degradation
+Pore-mediated penetration of viral genome into host cell
+Porin
+Porphyrin biosynthesis
+Potassium
+Potassium channel
+Potassium transport
+Prenylation
+Prenyltransferase
+Primosome
+Prion
+Proline biosynthesis
+Protease
+Protease inhibitor
+Proteasome
+Protein biosynthesis
+Protein phosphatase
+Protein splicing
+Protein synthesis inhibitor
+Protein transport
+Purine biosynthesis
+Purine metabolism
+Purine salvage
+Pyridine nucleotide biosynthesis
+Pyridoxal phosphate
+Pyrimidine biosynthesis
+Pyrrolidone carboxylic acid
+Pyrrolysine
+Pyruvate
+Queuosine biosynthesis
+Quinone
+Quorum sensing
+RNA editing
+RNA repair
+RNA suppression of termination
+RNA-binding
+RNA-directed DNA polymerase
+RNA-directed RNA polymerase
+RNA-mediated gene silencing
+Receptor
+Redox-active center
+Reference proteome
+Repeat
+Repressor
+Restriction system
+Restriction-modification system evasion by virus
+Retinal protein
+Riboflavin biosynthesis
+Ribonucleoprotein
+Ribosomal frameshifting
+Ribosomal protein
+Ribosome biogenesis
+Rotamase
+S-adenosyl-L-methionine
+S-nitrosylation
+SH2 domain
+SH3 domain
+SH3-binding
+SOS mutagenesis
+SOS response
+Schiff base
+Secreted
+Selenium
+Selenocysteine
+Sensory transduction
+Septation
+Serine biosynthesis
+Serine esterase
+Serine protease
+Serine protease inhibitor
+Serine/threonine-protein kinase
+Sialic acid
+Sigma factor
+Signal
+Signal recognition particle
+Signal-anchor
+Sodium
+Sodium transport
+Spermidine biosynthesis
+Spliceosome
+Sporulation
+Steroid biosynthesis
+Steroid metabolism
+Steroidogenesis
+Sterol biosynthesis
+Sterol metabolism
+Stress response
+Sugar transport
+Sulfation
+Superantigen
+Superinfection exclusion
+Suppressor of RNA silencing
+Sushi
+Syncytium formation induced by viral infection
+T=1 icosahedral capsid protein
+T=13 icosahedral capsid protein
+T=16 icosahedral capsid protein
+T=2 icosahedral capsid protein
+T=25 icosahedral capsid protein
+T=3 icosahedral capsid protein
+T=4 icosahedral capsid protein
+T=7 icosahedral capsid protein
+T=pseudo3 icosahedral capsid protein
+TPQ
+TPR repeat
+Teichoic acid biosynthesis
+Thiamine biosynthesis
+Thiamine pyrophosphate
+Thiol protease
+Thiol protease inhibitor
+Threonine biosynthesis
+Thylakoid
+Thyroid hormone
+Topoisomerase
+Toxin
+Toxin-antitoxin system
+Transcription
+Transcription antitermination
+Transcription regulation
+Transcription termination
+Transducer
+Transferase
+Transit peptide
+Translation regulation
+Translational shunt
+Translocase
+Translocation
+Transmembrane
+Transmembrane beta strand
+Transmembrane helix
+Transport
+Transposable element
+Transposition
+Tricarboxylic acid cycle
+Trimethoprim resistance
+Tryptophan biosynthesis
+Tyrosine-protein kinase
+Ubiquinone
+Ubiquinone biosynthesis
+Ubl conjugation
+Ubl conjugation pathway
+Viral DNA replication
+Viral RNA replication
+Viral attachment to host adhesion receptor
+Viral attachment to host cell
+Viral attachment to host cell pilus
+Viral attachment to host entry receptor
+Viral baseplate protein
+Viral budding
+Viral budding via the host ESCRT complexes
+Viral capsid assembly
+Viral capsid maturation
+Viral contractile tail ejection system
+Viral envelope protein
+Viral exotoxin
+Viral extrusion
+Viral genome circularization
+Viral genome ejection through host cell envelope
+Viral genome excision
+Viral genome integration
+Viral genome packaging
+Viral immunoevasion
+Viral ion channel
+Viral latency
+Viral latency initiation and maintenance
+Viral long flexible tail ejection system
+Viral matrix protein
+Viral movement protein
+Viral nucleoprotein
+Viral occlusion body
+Viral penetration into host cytoplasm
+Viral penetration into host cytoplasm via pilus retraction
+Viral penetration into host nucleus
+Viral penetration via lysis of host organellar membrane
+Viral penetration via permeabilization of host membrane
+Viral primary envelope fusion with host outer nuclear membrane
+Viral reactivation from latency
+Viral receptor tropism switching
+Viral release from host cell
+Viral short tail ejection system
+Viral tail assembly
+Viral tail fiber assembly
+Viral tail fiber protein
+Viral tail protein
+Viral tail sheath protein
+Viral tail tube protein
+Viral transcription
+Virion
+Virion maturation
+Virion tegument
+Virulence
+Virus endocytosis by host
+Virus entry into host cell
+Vitamin C
+WD repeat
+Xylan degradation
+Zinc
+Zinc-finger
+Zymogen
+mRNA capping
+mRNA processing
+mRNA splicing
+mRNA transport
+rRNA processing
+rRNA-binding
+tRNA processing
+tRNA-binding

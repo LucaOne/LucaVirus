@@ -1,0 +1,8 @@
+CDS
+intron
+misc_RNA
+ncRNA
+rRNA
+regulatory
+tRNA
+tmRNA
