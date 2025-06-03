@@ -46,7 +46,6 @@ jupyter kernelspec list
 ##### remove kernel      
 jupyter kernelspec uninstall lucavirus    
 
-
 ### step3:  install other requirements
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple   
 
@@ -75,7 +74,10 @@ training LucaVirus only using viral gene(DNA + RNA) data.
 training LucaVirus only using viral protein data.     
 
 **run_multi_v1.0_single.sh**   
-training LucaVirus only using one GPU card.   
+training LucaVirus only using one GPU card.    
+
+### TensorBoard for Loss Curve      
+tensorboard --logdir tb-logs --bind_all --port 8008    
  
 
 ## 9. Data and Code Availability         
