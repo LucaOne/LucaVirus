@@ -221,7 +221,7 @@ def get_args():
         '--model_type',
         default="lucavirus",
         type=str,
-        choices=["lucavirus"],
+        choices=["lucavirus", "lucaone_virus"],
         help='the model type'
     )
     parser.add_argument(
@@ -723,7 +723,7 @@ def check_args(args):
         if llm_step is None:
             llm_step = "36000000"
 
-        if llm_type == "lucavirus":
+        if llm_type in ["lucavirus", "lucaone_virus"]:
             download_trained_checkpoint_lucavirus(
                 llm_dir="../",
                 llm_type=llm_type,
