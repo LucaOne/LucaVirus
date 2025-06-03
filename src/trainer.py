@@ -278,12 +278,12 @@ def train(
                 # print(str(loss))
                 if global_step % args.gradient_accumulation_steps == 0:
                     print("\rTraining, Epoch: %04d, Batch: %06d, Sample Num: %d, Cur Loss: %.08f, Avg Loss: %.08f" % (
-                        epoch + 1,
-                        cur_epoch_step,
-                        done_sample_num,
-                        cur_loss,
-                        total_loss/global_step
-                    ), end="", flush=True
+                            epoch + 1,
+                            cur_epoch_step,
+                            done_sample_num,
+                            cur_loss,
+                            total_loss/global_step
+                        ), end="", flush=True
                     )
                     if global_step == 1 or global_step % args.loss_logging_steps == 0:
                         writer_info_tb(tb_writer, {
@@ -664,7 +664,7 @@ def train_continue(
             best_metric_value = 0.0
         best_metric_model_info = {}
         run_begin_time = time.time()
-        total_loss, logging_loss = args.gloabl_total_loss, 0.0
+        total_loss, logging_loss = args.global_total_loss, 0.0
         real_epoch = 0
         total_use_time = 0
         done_sample_num = 0
