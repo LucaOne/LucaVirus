@@ -51,13 +51,13 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ## 5. Embedding           
 using `src/get_embedding.py` or `src/embedding/get_embedding.py`      
-usage information refer to `src/embedding/README.md`               
+usage information refer to `src/embedding/README.md`  or `src/get_embedding_guidance.md`                  
 
-## 6. For Downstream Tasks    
+## 6. For Downstream Tasks      
 
-## 7. Dataset       
+## 7. Dataset         
 
-## 8. Training Scripts    
+## 8. Training Scripts      
 **run_multi_v1.0.sh**     
 use the LucaOne's chenckpoint(`step=17600000` or `36000000`) for LucaVirus training.
  
@@ -86,7 +86,7 @@ tensorboard --logdir tb-logs --bind_all --port 8008
 <a href="https://scholar.google.com.hk/citations?user=RDbqGTcAAAAJ&hl=en" title="Yong He">Yong He</a>,    
 <a href="https://scholar.google.com.hk/citations?hl=zh-CN&pli=1&user=Zhlg9QkAAAAJ" title="Yuan-Fei Pan">Yuan-Fei Pan</a>,      
 <a href="https://scholar.google.com/citations?user=lT3nelQAAAAJ&hl=en" title="Zhaorong Li">Zhaorong Li</a>,    
-<a href="https://scholar.google.com/citations?user=1KJOH7YAAAAJ&hl=zh-CN&oi=ao" title="Mang Shi">Mang Shi</a>,    
+<a href="https://scholar.google.com/citations?user=1KJOH7YAAAAJ&hl=zh-CN&oi=ao" title="Mang Shi">Mang Shi</a>,      
 Yuqi Liu
 
 ## 11. Citation              
