@@ -1,7 +1,9 @@
 # LucaVirus     
 LucaVirus: Modeling the Evolutionary and Functional Landscape of Viruses with a Unified Genome-Protein Language Model    
-# TimeLine   
-## **2025-06-26: Preprint**  
+
+
+## TimeLine   
+### **2025-06-26: Preprint**  
 On June 16, 2025, the preprint version was released and LucaVirus and LucaVirusTasks were open-sourced.     
 
 ## 1. LucaVirus Workflow     
