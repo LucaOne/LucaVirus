@@ -114,15 +114,20 @@ python -m ipykernel install --user --name lucavirus --display-name "Python(LucaV
 jupyter kernelspec list
 
 ##### remove kernel
-jupyter kernelspec uninstall lucavirus
+jupyter kernelspec uninstall lucavirus    
 
-## 6. Embedding  Inference            
+## 6. CheckPoints    
+<a href="http://47.93.21.181/lucavirus/TrainedCheckPoint/">CheckPoints</a>      
+This project will download automatically LucaVirus Trained-CheckPoint from **FTP**.       
+
+
+## 7. Embedding  Inference            
 using `src/get_embedding.py` or `src/embedding/get_embedding.py`      
 usage information refer to `src/embedding/README.md`  or `src/get_embedding_guidance.md`                  
 
-## 7. Training Scripts      
+## 8. Training Scripts      
 **run_multi_v1.0.sh**     
-use the LucaOne's chenckpoint(`step=17600000` or `36000000`) for LucaVirus training.
+use the LucaOne's checkpoint(`step=17600000` or `36000000`) for LucaVirus training.
  
 **run_multi_v1.0_continue.sh**     
 continue training when an interruption occurs.        
@@ -141,20 +146,24 @@ training LucaVirus only using one GPU card.
 
 ### TensorBoard for Loss Curve      
 tensorboard --logdir tb-logs --bind_all --port 8008        
- 
 
-## 8. Data Availability        
+## 9. Data Availability        
+The Pre-training data, downstream  tasks datasets will be open soon.   
 
-## 9. Code Availability     
 
-## 10. Contributor             
+## 10. Code Availability     
+**Foundation Model:** <a href="https://github.com/LucaOne/LucaVirus">LucaVirus</a>      
+**Downstream Tasks:** <a href="https://github.com/LucaOne/LucaVirus">LucaVirusTasks</a>    
+
+
+## 11. Contributor             
 <a href="https://scholar.google.com.hk/citations?user=RDbqGTcAAAAJ&hl=en" title="Yong He">Yong He</a>,    
 <a href="https://scholar.google.com.hk/citations?hl=zh-CN&pli=1&user=Zhlg9QkAAAAJ" title="Yuan-Fei Pan">Yuan-Fei Pan</a>,      
 <a href="https://scholar.google.com/citations?user=lT3nelQAAAAJ&hl=en" title="Zhaorong Li">Zhaorong Li</a>,    
 <a href="https://scholar.google.com/citations?user=1KJOH7YAAAAJ&hl=zh-CN&oi=ao" title="Mang Shi">Mang Shi</a>,      
 Yuqi Liu
 
-## 11. Citation              
+## 12. Citation               
 
 
 
