@@ -153,7 +153,7 @@ The Pre-training data, downstream  tasks datasets will be open soon.
 
 ## 10. Code Availability     
 **Foundation Model:** <a href="https://github.com/LucaOne/LucaVirus">LucaVirus</a>      
-**Downstream Tasks:** <a href="https://github.com/LucaOne/LucaVirus">LucaVirusTasks</a>    
+**Downstream Tasks:** <a href="https://github.com/LucaOne/LucaVirusTasks">LucaVirusTasks</a>    
 
 
 ## 11. Contributor             
