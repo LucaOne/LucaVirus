@@ -118,7 +118,7 @@ jupyter kernelspec uninstall lucavirus
 
 ## 6. CheckPoints    
 <a href="http://47.93.21.181/lucavirus/TrainedCheckPoint/">CheckPoints</a>      
-This project will download automatically LucaVirus Trained-CheckPoint from **FTP**.       
+This project will download automatically LucaVirus Trained-CheckPoint from **FTP** when embedding inference.        
 
 
 ## 7. Embedding  Inference            
