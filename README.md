@@ -117,7 +117,7 @@ jupyter kernelspec list
 jupyter kernelspec uninstall lucavirus    
 
 ## 6. CheckPoints    
-<a href="http://47.93.21.181/lucavirus/TrainedCheckPoint/">CheckPoints</a>      
+<a href="http://47.93.21.181/lucavirus/TrainedCheckPoint/">TrainedCheckPoints</a>      
 This project will download automatically LucaVirus Trained-CheckPoint from **FTP** when embedding inference.        
 
 
@@ -148,7 +148,8 @@ training LucaVirus only using one GPU card.
 tensorboard --logdir tb-logs --bind_all --port 8008        
 
 ## 9. Data Availability        
-The Pre-training data, downstream  tasks datasets will be open soon.   
+The pre-training data will be open soon.   
+The <a href="http://47.93.21.181/lucavirus/DownstreamTasksDatasets/">downstream tasks datasets</a> and <a href="http://47.93.21.181/lucavirus/DownstreamTasksTrainedModels/">downstream tasks checkpoints</a> can access at:  <a href="http://47.93.21.181/lucavirus/">LucaVirus</a>. 
 
 
 ## 10. Code Availability     
