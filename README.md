@@ -164,7 +164,19 @@ The <a href="http://47.93.21.181/lucavirus/DownstreamTasksDatasets/">downstream 
 <a href="https://scholar.google.com/citations?user=1KJOH7YAAAAJ&hl=zh-CN&oi=ao" title="Mang Shi">Mang Shi</a>,      
 Yuqi Liu
 
-## 12. Citation               
+## 12. Citation            
+@article { LucaVirus,     
+    author = {Pan, Yuan-Fei* and He, Yong* and Liu, Yu-Qi and Shan, Yong-Tao and Liu, Shu-Ning and Liu, Xue and Pan, Xiaoyun and Bai, Yinqi and Xu, Zan and Wang, Zheng and Ye, Jieping and Holmes, Edward C. and Li, Bo and Chen, Yao-Qing and Li, Zhao-Rong and Shi, Mang},       
+    title = {Predicting the Evolutionary and Functional Landscapes of Viruses with a Unified Nucleotide-Protein Language Model: LucaVirus},
+    elocation-id = {2025.06.14.659722},    
+    year = {2025},   
+    doi = {10.1101/2025.06.14.659722},    
+    publisher = {Cold Spring Harbor Laboratory },   
+    URL = {https://www.biorxiv.org/content/early/2025/06/20/2025.06.14.659722 },    
+    eprint = {https://www.biorxiv.org/content/early/2025/06/20/2025.06.14.659722.full.pdf },     
+    journal = {bioRxiv}        
+}
+
 
 
 
