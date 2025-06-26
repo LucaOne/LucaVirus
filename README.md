@@ -151,6 +151,7 @@ tensorboard --logdir tb-logs --bind_all --port 8008
 The pre-training data will be opened soon.   
 The <a href="http://47.93.21.181/lucavirus/DownstreamTasksDatasets/">downstream tasks datasets</a> and <a href="http://47.93.21.181/lucavirus/DownstreamTasksTrainedModels/">downstream tasks checkpoints</a> can access at:  <a href="http://47.93.21.181/lucavirus/">LucaVirus</a>. 
 
+or at: <a href="https://zenodo.org/records/15703216">Zenodo</a>     
 
 ## 10. Code Availability     
 **Foundation Model:** <a href="https://github.com/LucaOne/LucaVirus">LucaVirus</a>      
