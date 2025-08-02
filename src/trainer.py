@@ -33,20 +33,6 @@ except ImportError:
     from src.tester import test
 
 
-def reduce_tensor(tensor, world_size):
-    # 用于平均所有gpu上的运行结果，比如loss
-    # Reduces the tensor data across all machines
-    # Example: If we print the tensor, we can get:
-    # tensor(334.4330, device='cuda:1') *********************, here is cuda:  cuda:1
-    # tensor(359.1895, device='cuda:3') *********************, here is cuda:  cuda:3
-    # tensor(263.3543, device='cuda:2') *********************, here is cuda:  cuda:2
-    # tensor(340.1970, device='cuda:0') *********************, here is cuda:  cuda:0
-    rt = tensor.clone()
-    dist.all_reduce(rt, op=torch.distributed.ReduceOp.SUM)
-    rt /= world_size
-    return rt
-
-
 def train(
         args,
         model,
@@ -246,13 +232,6 @@ def train(
                 last_last_loss_list=last_last_loss_list,
                 last_loss_list=last_loss_list
             )
-            """
-            if args.n_gpu > 1:
-                reduced_loss = reduce_tensor(loss.data, dist.get_world_size())
-            else:
-                reduced_loss = loss
-            """
-
             if args.local_rank in [0, -1]:
                 # cur_loss = reduced_loss.item()
                 cur_loss = loss.item()
@@ -376,12 +355,6 @@ def train(
                         log_fp.flush()
                         log_total_losses = {}
                         log_total_steps = {}
-
-            """
-            for k, v in model.named_parameters():
-                print(k)
-                print(v.grad)
-            """
             if args.gradient_accumulation_steps > 1:
                 # The loss of each batch will be divided by gradient_accumulation_steps
                 loss = loss / args.gradient_accumulation_steps
@@ -784,12 +757,6 @@ def train_continue(
                         last_last_loss_list=last_last_loss_list,
                         last_loss_list=last_loss_list
                     )
-                    """
-                    if args.n_gpu > 1:
-                        reduced_loss = reduce_tensor(loss.data, dist.get_world_size())
-                    else:
-                        reduced_loss = loss
-                    """
                     if args.local_rank in [0, -1]:
                         # cur_loss = reduced_loss.item()
                         cur_loss = loss.item()
@@ -811,8 +778,6 @@ def train_continue(
                             log_total_losses,
                             log_total_steps,
                         )
-                        # print(str(losses))
-                        # print(str(loss))
                         if global_step % args.gradient_accumulation_steps == 0:
                             if global_step % args.loss_logging_steps == 0:
                                 print("Training, Epoch: %d, Batch: %d, Sample Num: %d, Cur Loss: %.08f, Log Avg Loss: %.08f, Global Avg Loss: %.08f\n" %
@@ -918,11 +883,6 @@ def train_continue(
                                 log_total_losses = {}
                                 log_total_steps = {}
 
-                    """
-                    for k, v in model.named_parameters():
-                        print(k)
-                        print(v.grad)
-                    """
                     if args.gradient_accumulation_steps > 1:
                         # The loss of each batch will be divided by gradient_accumulation_steps
                         loss = loss / args.gradient_accumulation_steps
@@ -1149,12 +1109,6 @@ def save_check_point(
     try:
         model_to_save.save_pretrained(output_dir)
     except Exception:
-        """
-        model = Model()
-        torch.save(model.state_dict(),path)
-        state_dict = torch.load(state_dict_path)
-        model = model.load_state_dict(state_dict)
-        """
         model_config.save_pretrained(output_dir)
         torch.save(model_to_save, os.path.join(output_dir, "pytorch.pt"))
         torch.save(model_to_save.state_dict(), os.path.join(output_dir, "pytorch.pth"))
