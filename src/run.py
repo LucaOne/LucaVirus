@@ -1112,7 +1112,7 @@ def get_model(args):
 
     if args.activation_dropout_prob is None:
         model_config.activation_dropout_prob = args.dropout_prob
-        model_config.attention_probs_dropout = args.dropout_prob
+        model_config.activation_dropout = args.dropout_prob
     else:
         model_config.activation_dropout_prob = args.activation_dropout_prob
         model_config.activation_dropout = args.activation_dropout_prob
