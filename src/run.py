@@ -1203,8 +1203,10 @@ def get_model(args):
             model = model_class.from_pretrained(args.model_dirpath, config=model_config, args=args)
         except Exception as e:
             model = model_class(model_config, args=args)
-            pretrained_net_dict = torch.load(os.path.join(args.model_dirpath, "pytorch.pth"), map_location=torch.device("cpu"))
-
+            pretrained_net_dict = torch.load(
+                os.path.join(args.model_dirpath, "pytorch.pth"),
+                map_location=torch.device("cpu")
+            )
             model_state_dict = {}
             new_state_dict = OrderedDict()
             for key, weight in model.state_dict().items():

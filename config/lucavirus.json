@@ -27,7 +27,7 @@
   "no_position_embeddings": true,
   "no_token_type_embeddings": false,
   "alphabet": "gene_prot",
-  "token_dropout": true,
+  "token_dropout": false,
   "ignore_index": -100,
   "use_embed_layer_norm": false,
   "use_last_layer_norm": true,

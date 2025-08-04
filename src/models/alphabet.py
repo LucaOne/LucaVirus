@@ -13,7 +13,17 @@
 import sys
 import numpy as np
 import itertools
-from typing import Sequence, List, Union
+from typing import Sequence, List
+sys.path.append(".")
+sys.path.append("..")
+sys.path.append("../..")
+sys.path.append("../../src")
+try:
+    from utils import gene_seq_replace
+except ImportError:
+    from src.utils import gene_seq_replace
+
+ATCGU = {"A", "T", "C", "G", "U"}
 
 # gene
 gene_prepend_toks = ['[PAD]', '[UNK]']
@@ -175,6 +185,21 @@ class Alphabet(object):
 
     def encode(self, text):
         return [self.tok_to_idx[tok] for tok in self.tokenize(text)]
+
+    def encode(self, text_type, text):
+        if text_type in ["gene", "dna", "rna", "nucleic_acid", "nucleotide"]:
+            if len(ATCGU & set(list(text.upper()))) > 0:
+                text = gene_seq_replace(text)
+        return [self.tok_to_idx[tok] for tok in self.tokenize(text)]
+
+    def encode_for_eval_mask(self, text):
+        return [self.tok_to_idx[tok] if tok != '-' else self.tok_to_idx["[MASK]"] for tok in self.tokenize(text)]
+
+    def encode_for_eval_mask(self, text_type, text):
+        if text_type in ["gene", "dna", "rna", "nucleic_acid", "nucleotide"]:
+            if len(ATCGU & set(list(text.upper()))) > 0:
+                text = gene_seq_replace(text)
+        return [self.tok_to_idx[tok] if tok != '-' else self.tok_to_idx["[MASK]"] for tok in self.tokenize(text)]
 
 # gene
 # https://www.ncbi.nlm.nih.gov/CBBresearch/Przytycka/download/lectures/PCB_Lect03_Scoring_Matr_Motifs.pdf
