@@ -26,7 +26,7 @@ try:
     from data_collator import *
     from encoder import Encoder
     from utils import set_seed, to_device, get_labels, get_parameter_number, save_model_parameters, \
-        download_trained_checkpoint_lucaone, download_trained_checkpoint_lucavrius
+        download_trained_checkpoint_lucaone_v1, download_trained_checkpoint_lucavrius
     from multi_files_stream_dataloader import *
     from trainer import train, train_continue
     from models.lucaone_gplm import LucaGPLM
@@ -37,7 +37,7 @@ except ImportError as e:
     from src.data_collator import *
     from src.encoder import Encoder
     from src.utils import set_seed, to_device, get_labels, get_parameter_number, save_model_parameters, \
-        download_trained_checkpoint_lucaone, download_trained_checkpoint_lucavirus
+        download_trained_checkpoint_lucaone_v1, download_trained_checkpoint_lucavirus
     from src.multi_files_stream_dataloader import *
     from src.trainer import train, train_continue
     from src.models.lucaone_gplm import LucaGPLM
@@ -733,7 +733,7 @@ def check_args(args):
                 llm_step=llm_step
             )
         else:
-            download_trained_checkpoint_lucaone(
+            download_trained_checkpoint_lucaone_v1(
                 llm_dir="../",
                 llm_type=llm_type,
                 llm_version=llm_version,
