@@ -1927,7 +1927,7 @@ def write_processed_sample_ids(dataset_type, time_str, sample_ids, epoch, local_
             print("Wrote %d into %s." % (size, file_path))
 
 
-def clean_seq(protein_id, seq, return_rm_index=False):
+def clean_seq_esm(seq_id, seq, return_rm_index=False):
     seq = seq.upper()
     new_seq = ""
     has_invalid_char = False
@@ -1941,7 +1941,7 @@ def clean_seq(protein_id, seq, return_rm_index=False):
             return_rm_index_set.add(idx)
             has_invalid_char = True
     if has_invalid_char:
-        print("id: %s. Seq: %s" % (protein_id, seq))
+        print("id: %s. Seq: %s" % (seq_id, seq))
         print("invalid char set:", invalid_char_set)
         print("return_rm_index:", return_rm_index_set)
     if return_rm_index:
