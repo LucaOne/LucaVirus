@@ -1949,6 +1949,33 @@ def clean_seq_esm(seq_id, seq, return_rm_index=False):
     return new_seq
 
 
+def matrix_2_vector(matrix, matrix_has_special_token, vector_type, save_type):
+    if vector_type == "cls":
+        return matrix[0, :]
+    elif vector_type == "max":
+        if matrix_has_special_token:
+            if save_type == "numpy":
+                return np.max(matrix[1:-1, :], axis=0)
+            else:
+                return torch.amax(matrix[1:-1, :], dim=0)
+        else:
+            if save_type == "numpy":
+                return np.max(matrix, axis=0)
+            else:
+                return torch.amax(matrix, dim=0)
+    else:
+        if matrix_has_special_token:
+            if save_type == "numpy":
+                return np.mean(matrix[1:-1, :], axis=0)
+            else:
+                return torch.mean(matrix[1:-1, :], dim=0)
+        else:
+            if save_type == "numpy":
+                return np.mean(matrix, axis=0)
+            else:
+                return torch.mean(matrix, dim=0)
+
+
 def download_file(url, local_filename):
     with requests.get(url, stream=True) as r:
         r.raise_for_status()
@@ -1973,7 +2000,7 @@ def download_folder(base_url, file_names, local_dir):
         print(f"Downloaded {file_name}")
 
 
-def download_trained_checkpoint_lucaone(
+def download_trained_checkpoint_lucaone_v1(
         llm_dir,
         llm_type="lucaone_gplm",
         llm_version="v2.0",
@@ -2029,6 +2056,83 @@ def download_trained_checkpoint_lucaone(
             models_base_url = os.path.join(base_url, models_path)
             download_folder(models_base_url, models_file_names, models_local_dir)
             print("LucaOne Downloaded.")
+            print("*" * 50)
+    except Exception as e:
+        print(e)
+        print("Download automatically LucaOne Trained CheckPoint failed!")
+        print("You can manually download 'logs/' and 'models/' into local directory: %s/ from %s" % (
+            os.path.abspath(llm_dir),
+            base_url
+        ))
+        raise Exception(e)
+
+
+def download_trained_checkpoint_lucaone(
+        llm_dir,
+        llm_type,
+        llm_version,
+        llm_step,
+        base_url="http://47.93.21.181/lucaone/TrainedCheckPoint/latest/"
+):
+    if llm_type not in ["lucaone"]:
+        llm_type = "lucaone"
+    if llm_version not in ["lucaone", "lucaone-gene", "lucaone-prot"]:
+        llm_version = "lucaone"
+    if llm_step is None:
+        if llm_version == "lucaone":
+            llm_step = "36000000"
+        elif llm_version == "lucaone-gene":
+            llm_step = "36800000"
+        elif llm_version == "lucaone-prot":
+            llm_step = "30000000"
+        else:
+            llm_version = "lucaone"
+            llm_step = "36000000"
+    try:
+        logs_file_names = ["logs.txt"]
+        models_file_names = ["config.json", "pytorch.pth", "training_args.bin", "tokenizer/alphabet.pkl"]
+        logs_path = "logs/%s/%s/" % (llm_type, llm_version)
+        models_path = "models/%s/%s/checkpoint-step%s" % (llm_type, llm_version, llm_step)
+        logs_local_dir = os.path.join(llm_dir, logs_path)
+        print("llm_dir: %s" % llm_dir)
+        print("logs_local_dir: %s" % logs_local_dir)
+
+        exists = True
+        for logs_file_name in logs_file_names:
+            filepath = os.path.join(logs_local_dir, logs_file_name)
+            if not os.path.exists(filepath):
+                exists = False
+                print(os.path.abspath(os.path.join(logs_local_dir, logs_file_name)) + ' not exists.')
+                break
+            else:
+                print("file: %s exists: %s." % (logs_file_name, filepath))
+        models_local_dir = os.path.join(llm_dir, models_path)
+        print("models_local_dir: %s" % models_local_dir)
+
+        if exists:
+            for models_file_name in models_file_names:
+                filepath = os.path.join(models_local_dir, models_file_name)
+                if not os.path.exists(filepath):
+                    exists = False
+                    print(os.path.abspath(os.path.join(models_local_dir, models_file_name)) + ' not exists.')
+                    break
+                else:
+                    print("file: %s exists: %s." % (models_file_name, filepath))
+        if not exists:
+            print("*" * 20 + "Downloading" + "*" * 20)
+            print("Downloading LucaOne TrainedCheckPoint: LucaOne-%s-%s-%s ..." % (llm_type, llm_version, llm_step))
+            print("Wait a moment(total 8GB), please.")
+            # download logs
+            if not os.path.exists(logs_local_dir):
+                os.makedirs(logs_local_dir)
+            logs_base_url = os.path.join(base_url, logs_path)
+            download_folder(logs_base_url, logs_file_names, logs_local_dir)
+            # download models
+            if not os.path.exists(models_local_dir):
+                os.makedirs(models_local_dir)
+            models_base_url = os.path.join(base_url, models_path)
+            download_folder(models_base_url, models_file_names, models_local_dir)
+            print("LucaOne Download Completed.")
             print("*" * 50)
     except Exception as e:
         print(e)

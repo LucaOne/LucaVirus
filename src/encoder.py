@@ -70,7 +70,7 @@ class Encoder(object):
                 label,
                 ignore_index=self.ignore_index
             )
-            # seq to seq ids
+            # seq to token ids
             encoding = self.tokenizer.encode_plus(
                 text=seq,
                 text_pair=None,
