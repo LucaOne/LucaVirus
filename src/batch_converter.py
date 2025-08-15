@@ -167,7 +167,7 @@ class BatchConverter(object):
             return input_ids, labels
 
     def __call_single__(self, batch_size, seq_types, seqs, seq_labels):
-        seq_encoded_list = [self.alphabet.encode(seq_str.upper()) for seq_str in seqs]
+        seq_encoded_list = [self.alphabet.encode(seq_type=seq_type, seq=seq_str.upper()) for seq_type, seq_str in zip(seq_types, seqs)]
         batch_size = min(batch_size, len(seq_encoded_list))
         if self.truncation_seq_length:
             seq_encoded_list = [encoded[:self.truncation_seq_length] for encoded in seq_encoded_list]
