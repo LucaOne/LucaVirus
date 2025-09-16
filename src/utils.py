@@ -54,8 +54,8 @@ def to_device(device, batch):
     sample_num = 0
     tens = None
     for item1 in batch.items():
-        new_batch[item1[0]] = {}
         if isinstance(item1[1], dict):
+            new_batch[item1[0]] = {}
             for item2 in item1[1].items():
                 new_batch[item1[0]][item2[0]] = {}
                 if isinstance(item2[1], dict):
@@ -1797,7 +1797,8 @@ def download_trained_checkpoint_lucaone_v1(
                     break
         if not exists:
             print("*" * 20 + "Downloading" + "*" * 20)
-            print("Downloading LucaOne TrainedCheckPoint: LucaOne-%s-%s-%s ..." % (
+            print("Downloading LucaOne(%s) TrainedCheckPoint: LucaOne-%s-%s-%s ..." % (
+                llm_type,
                 llm_version,
                 llm_time_str,
                 llm_step
@@ -1817,7 +1818,7 @@ def download_trained_checkpoint_lucaone_v1(
             print("*" * 50)
     except Exception as e:
         print(e)
-        print("Download automatically LucaOne Trained CheckPoint failed!")
+        print("Download automatically LucaOne(%s) Trained CheckPoint failed!" % llm_type)
         print("You can manually download 'logs/' and 'models/' into local directory: %s/ from %s" % (
             os.path.abspath(llm_dir),
             base_url
@@ -1878,7 +1879,9 @@ def download_trained_checkpoint_lucaone(
                     print("file: %s exists: %s." % (models_file_name, filepath))
         if not exists:
             print("*" * 20 + "Downloading" + "*" * 20)
-            print("Downloading LucaOne TrainedCheckPoint: LucaOne-%s-%s-%s ..." % (llm_type, llm_version, llm_step))
+            print("Downloading LucaOne TrainedCheckPoint: LucaOne-%s-%s-%s ..." % (
+                llm_type, llm_version, llm_step
+            ))
             print("Wait a moment(total 8GB), please.")
             # download logs
             if not os.path.exists(logs_local_dir):
@@ -1945,8 +1948,8 @@ def download_trained_checkpoint_lucavirus(
                     break
         if not exists:
             print("*" * 20 + "Downloading" + "*" * 20)
-            print("Downloading LucaVirus TrainedCheckPoint: LucaVirus-%s-%s-%s ..." % (
-                llm_version, llm_time_str, llm_step
+            print("Downloading LucaVirus(%s) TrainedCheckPoint: LucaVirus-%s-%s-%s ..." % (
+                llm_type, llm_version, llm_time_str, llm_step
             ))
             print("Wait a moment, please.")
             # download logs
@@ -1963,7 +1966,7 @@ def download_trained_checkpoint_lucavirus(
             print("*" * 50)
     except Exception as e:
         print(e)
-        print("Download automatically LucaVirus Trained CheckPoint failed!")
+        print("Download automatically LucaVirus(%s)Trained CheckPoint failed!" % llm_type)
         print("You can manually download 'logs/' and 'models/' into local directory: %s/ from %s" % (
             os.path.abspath(llm_dir),
             base_url
