@@ -43,7 +43,7 @@ pip install -e .
 ## 🚀Quick Start    
 
 ### 1. Feature Extraction/Embedding       
-Extract high-dimensional embeddings for downstream analysis or training downstream tasks using LucaVirus-Embedding:
+Extract high-dimensional embeddings for downstream analysis or training downstream tasks using LucaVirus-Embedding.    
 
 Please refer to the code in `test/test_lucavirus_embedding.py`.
 
@@ -53,14 +53,14 @@ Continue to perform MLM pre-training or sequence recovery.
 Please refer to the code in `test/test_lucavirus_mlm.py`.
 
 ### 3. Sequence Classification       
-Predict properties for the entire sequence (e.g., RdRP vs. Non-RdRP):
+Predict properties for the entire sequence (e.g., RdRP vs. Non-RdRP).   
 
-Supports `multi-class classification`, `binary classification`, `multi-label classification`, and `regression` tasks.
+Supports `multi-class classification`, `binary classification`, `multi-label classification`, and `regression` tasks.    
 
 Please refer to the code in `test/test_lucavirus_seq_classification.py`.
 
 ### 4. Token Classification      
-Predict properties for each residue/nucleotide (e.g., Secondary Structure, Binding Sites, Post-Translational Modifications):
+Predict properties for each residue/nucleotide (e.g., Secondary Structure, Binding Sites, Post-Translational Modifications).    
 
 Supports `multi-class classification`, `binary classification`, `multi-label classification`, and `regression` tasks.
 
