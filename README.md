@@ -3,6 +3,21 @@ LucaVirus: Modeling the Evolutionary and Functional Landscape of Viruses with a 
 
 
 ## TimeLine    
+* **2025/12/31**    
+  LucaVirus now supports the Hugging Face interface for further training.      
+  It allows for various training modes, including using sequence-only inputs or injecting biological knowledge following the LucaVirus framework. You can fine-tune the model for both sequence-level and token-level classification or regression tasks.        
+  Please refer to the Hugging Face address: https://huggingface.co/collections/LucaGroup/lucavirus, or the `huggingface` branch of this repository.
+
+    - **Hugging Face Native**: Full support for `AutoModel`, `AutoModelForMaskedLM`, `AutoModelForSequenceClassification`, `AutoModelForTokenClassification`, `AutoConfig`, and `AutoTokenizer`.
+    - **Unified Architecture**: Single model architecture handling multiple biological modalities.
+    - **Task-Specific Heads**:
+        - `LucaVirusModel`: For sequences embedding.
+        - `LucaVirusForMaskedLM`: For pre-training and sequence recovery.
+        - `LucaVirusForSequenceClassification`: For sequence-level tasks (e.g., protein family, solubility, or promoter prediction).
+        - `LucaVirusForTokenClassification`: For residue-level tasks (e.g., secondary structure, binding sites, or post-translational modifications).
+    - **Extensible**: Easily adaptable to custom downstream tasks using the standard `transformers` API.
+
+
 ###  2025/08/15:   
 **Huggingface**     
 <a href='https://huggingface.co/LucaGroup'>https://huggingface.co/LucaGroup </a>
