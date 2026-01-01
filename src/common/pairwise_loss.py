@@ -30,7 +30,7 @@ class PairwiseLoss(nn.Module):
         elif reduction == "None":
             return out
         else:
-            raise Exception("Not support reduction=%s" % reduction)
+            raise ValueError("Not support reduction=%s" % reduction)
 
     def forward(self, preds, targets=None):
         outputs = (preds,)

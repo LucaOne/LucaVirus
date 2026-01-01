@@ -38,7 +38,7 @@ class MultiFilesStreamLoader(object):
             seed=1221
     ):
         if buffer_size % batch_size != 0:
-            raise Exception("buffer_size must be evenly div by batch_size")
+            raise ValueError("Buffer_size must be evenly div by batch_size")
         if isinstance(filepaths, str):
             if os.path.isdir(filepaths):
                 new_filepaths = []

@@ -310,7 +310,7 @@ class LucaGPLM(nn.Module):
                 # label: N
                 loss = loss_fct(logits.view(-1, label_size), label.view(-1))
         else:
-            raise Exception("Not support output_mode=%s" % output_mode)
+            raise ValueError("Not support output_mode=%s" % output_mode)
         return loss
 
     def __forword__(

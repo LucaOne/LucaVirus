@@ -91,7 +91,7 @@ class BatchConverter(object):
                     elif level1_name == "seq_level":
                         new_encoded_labels[level1_name][level2_name] = torch.tensor(item2[1], dtype=torch.int64)
                     else:
-                        raise Exception("not support task_level=%s" % level1_name)
+                        raise ValueError("Not support task_level=%s" % level1_name)
         return new_encoded_labels
 
     def __mask_tokens_dynamic__(self, input_ids, seq_len):

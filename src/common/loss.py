@@ -248,6 +248,6 @@ def create_loss_function(config,
                     else:
                         loss_fct = MaskedCrossEntropyLoss(reduction=reduction, ignore_nans=True, ignore_value=ignore_index)
         else:
-            raise Exception("Not support output mode: %s." % output_mode)
+            raise ValueError("Not support output mode: %s." % output_mode)
 
     return dropout, hidden_layer, hidden_act, classifier, output, loss_fct
