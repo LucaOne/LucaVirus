@@ -112,7 +112,7 @@ class Alphabet(object):
             append_toks = gene_prot_append_toks
             standard_toks = gene_prot_standard_toks
         else:
-            raise Exception("Not support tokenizer name: %s" % name)
+            raise ValueError("Not support tokenizer name: %s" % name)
         prepend_bos = True
         append_eos = True
 

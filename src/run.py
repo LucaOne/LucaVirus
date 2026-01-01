@@ -1050,7 +1050,7 @@ def get_model(args):
     if args.model_type in ["lucavirus", "lucaone_virus"]:
         config_class, model_class = LucaGPLMConfig, LucaGPLM
     else:
-        raise Exception("Not support model_type=%s" % args.model_type)
+        raise ValueError("Not support model_type=%s" % args.model_type)
 
     # model config
     model_config: PretrainedConfig = config_class.from_json_file(args.model_config)
@@ -1249,7 +1249,7 @@ def get_label_size(label_filepath):
         cur_labels = get_labels(label_filepath, header=True if label_filepath.endswith(".csv") else False)
         return len(cur_labels)
     else:
-        raise Exception("Label path: %s not exists." % label_filepath)
+        raise ValueError("Label path: %s not exists." % label_filepath)
 
 
 def load_label_size_dict(args):
@@ -1484,7 +1484,7 @@ def create_collator(args, tokenizer):
         )
 
     if "seq2seq_level" in args.pretrain_task_level_type:
-        raise Exception("not support seq2seq_level task.")
+        raise ValueError("Not support seq2seq_level task.")
     return dcForLanguageModeling, dcForWholeWordMask, \
            dcForTokenClassification, dcForSequenceClassification, \
            dcForStructureRegression, dcForPairClassification, dcForSeq2Seq

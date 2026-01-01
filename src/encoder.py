@@ -93,7 +93,7 @@ class Encoder(object):
                 elif self.truncation == "left":
                     seq = seq[-cur_max_length:]
                 else:
-                    raise Exception("truncation = %s" % self.truncation)
+                    raise ValueError("Truncation = %s" % self.truncation)
                 L = cur_max_length + 2 if self.add_special_tokens else cur_max_length
             else:
                 L = len(seq) + 2 if self.add_special_tokens else len(seq)
@@ -132,7 +132,7 @@ class Encoder(object):
         seq = seq.upper()
         encoding["ori_seq"] = seq
         if self.tokenization:
-            raise Exception("not support tokenization")
+            raise ValueError("Not support tokenization")
         else:
             cur_max_length = self.max_length
             if self.add_special_tokens:
@@ -143,7 +143,7 @@ class Encoder(object):
                 elif self.truncation == "left":
                     seq = seq[-cur_max_length:]
                 else:
-                    raise Exception("truncation = %s" % self.truncation)
+                    raise ValueError("Truncation = %s" % self.truncation)
                 L = cur_max_length + 2 if self.add_special_tokens else cur_max_length
             else:
                 L = len(seq) + 2 if self.add_special_tokens else len(seq)

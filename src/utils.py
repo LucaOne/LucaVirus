@@ -246,7 +246,7 @@ def process_outputs(output_mode, truth, pred, output_truth, output_pred, ignore_
                     cur_truth = cur_truth[cur_mask, :]
                     cur_pred = cur_pred[cur_mask, :]
                 else:
-                    raise Exception("not output mode: task_type_level=%s, task_type_name=%s, mode:%s" % (task_type_level, task_type_name, output_mode[task_type_level][task_type_name]))
+                    raise ValueError("Not support the output mode: task_type_level=%s, task_type_name=%s, mode:%s" % (task_type_level, task_type_name, output_mode[task_type_level][task_type_name]))
                     
                 if cur_mask.sum().item() > 0:
                     cur_truth = cur_truth.detach().cpu().numpy()
@@ -389,7 +389,7 @@ def eval_metrics(output_mode, truths, preds, threshold=0.5):
             elif cur_output_mode in ["binary-class", "binary_class"]:
                 cur_result = metrics_binary(cur_truths, cur_preds, threshold=threshold)
             else:
-                raise Exception("Not Support this output mode: %s, task_type_level=%s, task_type_name=%s" % (cur_output_mode, task_type_level, task_type_name))
+                raise ValueError("Not Support this output mode: %s, task_type_level=%s, task_type_name=%s" % (cur_output_mode, task_type_level, task_type_name))
             result[task_type_level][task_type_name] = cur_result
 
     return result
@@ -508,7 +508,7 @@ def eval_tensor(
                                                      ground_truth=ground_truth_ids, ignore_index=ignore_index,
                                                      selected_index=selected_index, threshold=0.5)
     else:
-        raise Exception("Not Support this output mode: %s" % output_mode)
+        raise ValueError("Not Support this output mode: %s" % output_mode)
 
     if output_dir and output_filename and pred_label_names and true_label_names:
         with open(os.path.join(output_dir, output_filename), "w") as wfp:
@@ -608,7 +608,7 @@ def label_id_2_label_name(output_mode, label_list, prob, ground_truth, ignore_in
                     res.append('N')
             return res
         else:
-            raise Exception("Not support the output_mode: %s" % output_mode)
+            raise ValueError("Not support the output_mode: %s" % output_mode)
     else:
         if torch.is_tensor(ground_truth):
             ground_truth = ground_truth.detach().cpu().numpy()
@@ -699,7 +699,7 @@ def label_id_2_label_name(output_mode, label_list, prob, ground_truth, ignore_in
                     res.append('N')
             return res
         else:
-            raise Exception("Not support the output_mode: %s" % output_mode)
+            raise ValueError("Not support the output_mode: %s" % output_mode)
 
 
 def get_lr(optimizer):
@@ -858,7 +858,7 @@ def calc_loss(args, cur_losses, last_last_loss_list=None, last_loss_list=None):
                             cur_loss_list.append(item2[1])
         return sum(cur_loss_list)
     else:
-        raise Exception("not support this multi loss strategy: %s" % args.multi_loss_strategy)
+        raise ValueError("Not support this multi loss strategy: %s" % args.multi_loss_strategy)
 
 
 def writer_info_tb(tb_writer, logs, global_step, prefix=None):

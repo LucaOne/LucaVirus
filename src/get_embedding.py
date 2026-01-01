@@ -91,7 +91,7 @@ def load_model(
     if args_info["model_type"] in ["lucavirus", "lucaone_virus"]:
         config_class, model_class = LucaGPLMConfig, LucaGPLM
     else:
-        raise Exception("Not support model_type=%s" % args_info["model_type"])
+        raise ValueError("Not support model_type=%s" % args_info["model_type"])
 
     # model config
     model_config: PretrainedConfig = config_class.from_json_file(os.path.join(model_dirpath, "config.json"))
@@ -436,7 +436,7 @@ def predict_embedding(
                 device=device
             )
         else:
-            raise Exception("Not support seq_type=%s for LucaVirus" % seq_type)
+            raise ValueError("Not support seq_type=%s for LucaVirus" % seq_type)
 
     if emb is None:
         return None, None
@@ -453,7 +453,7 @@ def predict_embedding(
             prepend_len = int(global_tokenizer["protein"].prepend_bos)
             append_len = int(global_tokenizer["protein"].append_eos)
         else:
-            raise Exception("Not support seq_type=%s for LucaVirus" % seq_type)
+            raise ValueError("Not support seq_type=%s for LucaVirus" % seq_type)
 
     if "representations" in embedding_type or "matrix" in embedding_type:
         if seq_type == "prot":
@@ -1170,7 +1170,7 @@ def main(model_args):
             emb = matrix_2_vector(emb, matrix_add_special_token, vector_type, model_args.save_type)
         print(emb)
     else:
-        raise Exception("input error, please --help.")
+        raise ValueError("Input error, please --help.")
 
 
 if __name__ == "__main__":
