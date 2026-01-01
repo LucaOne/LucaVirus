@@ -1221,8 +1221,9 @@ def get_model(args):
                     new_state_dict[name] = v
                 else:
                     diff.add(name)
-            print("diff:")
-            print(diff)
+            if diff:
+                print("diff:")
+                print(diff)
             model.load_state_dict(new_state_dict)
     else:
         # create model
