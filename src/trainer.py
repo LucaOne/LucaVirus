@@ -203,8 +203,8 @@ def train(
                 output_keys=args.gene_output_keys,
                 output_keys_b=args.prot_output_keys,
                 pair_output_keys=args.pair_output_keys,
-                output_attentions=True,
-                output_hidden_states=True
+                output_attentions=False,
+                output_hidden_states=False
             )
             if isinstance(output, dict):
                 losses = []
@@ -728,8 +728,8 @@ def train_continue(
                         output_keys=args.gene_output_keys,
                         output_keys_b=args.prot_output_keys,
                         pair_output_keys=args.pair_output_keys,
-                        output_attentions=True,
-                        output_hidden_states=True
+                        output_attentions=False,
+                        output_hidden_states=False
                     )
                     if isinstance(output, dict):
                         losses = []
