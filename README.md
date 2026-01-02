@@ -3,7 +3,20 @@ LucaVirus: Modeling the Evolutionary and Functional Landscape of Viruses with a 
 
 
 ## TimeLine    
-* **2025/12/31**    
+###  **2026/01/01**
+OpenVirus Datasets are now available on HuggingFace.    
+    The corpus comprises 15.7 million non-redundant viral sequences (including 10.4 million nucleotide sequences and 5.2 million protein sequences). This large-scale dataset provides a robust foundation for learning viral evolutionary patterns and functional signatures.
+
+    You can access the datasets via the following links (please note the subtle differences between these links):          
+    OpenVirus (Full Corpus - Gene & Prot):          
+    https://huggingface.co/datasets/LucaGroup/LucaVirus-OpenVirus-Gene-Prot          
+    OpenVirus-Gene (Nucleotide only):          
+    https://huggingface.co/datasets/LucaGroup/LucaVirus-OpenVirus-Gene          
+    OpenVirus-Prot (Protein only):          
+    https://huggingface.co/datasets/LucaGroup/LucaVirus-OpenVirus-Prot          
+
+
+###  **2025/12/31**    
   LucaVirus now supports the Hugging Face interface for further training.      
   It allows for various training modes, including using sequence-only inputs or injecting biological knowledge following the LucaVirus framework. You can fine-tune the model for both sequence-level and token-level classification or regression tasks.        
   Please refer to the Hugging Face address: https://huggingface.co/collections/LucaGroup/lucavirus, or the `huggingface` branch of this repository.
