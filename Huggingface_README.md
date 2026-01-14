@@ -9,7 +9,7 @@ tags:
 - AI4Biology
 - Virus
 - Bio
-- 1.1.0
+- 1.1.1
 language:
 - en
 ---
@@ -23,7 +23,7 @@ LucaVirus: a Unified Nucleotide-Protein Language Model for Virus.
 You can install the package from source using pip:
 
 ```bash
-pip install lucavirus==1.1.0
+pip install lucavirus==1.1.1
 pip install tokenizers==0.19.1
 pip install transformers==4.41.2
 ```

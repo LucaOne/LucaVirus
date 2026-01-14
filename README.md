@@ -3,7 +3,7 @@
 
 # LucaVirus: a Unified Nucleotide-Protein Language Model for Virus
 
-[![PyPI version](https://img.shields.io/badge/pip-v1.1.0-blue)](https://pypi.org/project/lucavirus/)
+[![PyPI version](https://img.shields.io/badge/pip-v1.1.1-blue)](https://pypi.org/project/lucavirus/)
 [![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-orange)](https://huggingface.co/your-username/LucaVirus)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -23,7 +23,7 @@
 ## Installation   
 
 ```bash
-pip install lucavirus==1.1.0
+pip install lucavirus==1.1.1
 pip install tokenizers==0.19.1
 pip install transformers==4.41.2
 ```
