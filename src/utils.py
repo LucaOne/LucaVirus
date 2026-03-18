@@ -1711,7 +1711,10 @@ def clean_seq_esm(seq_id, seq, return_rm_index=False):
 
 def matrix_2_vector(matrix, matrix_has_special_token, vector_type, save_type):
     if vector_type == "cls":
-        return matrix[0, :]
+        if save_type == "numpy":
+            return matrix[0, :].copy()
+        else:
+            return matrix[0, :].clone()
     elif vector_type == "max":
         if matrix_has_special_token:
             if save_type == "numpy":
