@@ -1610,6 +1610,7 @@ def calc_emb_filename_by_seq_id(seq_id, embedding_type):
         seq_id = seq_id[1:]
 
     if "|" in seq_id:
+        print(f"Warning: the seq id({seq_id}) contain invalid char '|', it will be replace with '_'.")
         emb_filename = embedding_type + "_" + seq_id.replace("|", "_").replace(" ", "").replace("/", "_") + ".pt"
     else:
         emb_filename = embedding_type + "_" + seq_id.replace(" ", "").replace("/", "_") + ".pt"
